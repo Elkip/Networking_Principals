@@ -1,0 +1,17 @@
+﻿# the compiler: gcc for C program, define as g++ for C++
+CC = gcc
+
+# compiler flags:
+#  -g    adds debugging information to the executable file
+#  -Wall turns on most, but not all, compiler warnings
+CFLAG = -g -Wall 
+
+#define C source files
+SRCS = KeyGen.c DieWithError.c Enc.c Dec.c StructToInt.c IntToStruct.c SetKey.c GetKey.c HandleTCPBroker.c sma.c
+
+#define executable file
+MAIN = Broker
+
+# the build target executable:
+$(MAIN): $(MAIN).c $(SRCS)
+	$(CC) $(CFLAGS) -o $(MAIN) $(MAIN).c $(SRCS)
